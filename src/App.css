@@ -1,3 +1,6 @@
+body {
+  background-color: #282c34;
+}
 .App {
   text-align: center;
 }
@@ -13,8 +16,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,81 @@
   to {
     transform: rotate(360deg);
   }
+}
+.buttons {
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+}
+.buttons button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+.reset,
+.solve {
+  font-size: 12pt;
+  font-weight: bold;
+}
+.board {
+  user-select: none;
+}
+.row {
+  display: flex;
+}
+.block {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+}
+@keyframes block-anim {
+  from {
+    transform: rotate(-45deg) scale(0.9);
+  }
+  50% {
+    transform: rotate(-25deg) scale(0.4);
+  }
+  to {
+    transform: rotate(0deg) scale(1);
+  }
+}
+.block input {
+  margin: 0;
+  border-radius: 4px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  align-self: center;
+}
+.filled input {
+  background-color: #ffffff20;
+  transition: all 0.1s;
+  font-weight: bold;
+  animation: block-anim 0.2s linear;
+}
+.empty input {
+  background-color: #00000020;
+  transition: all 0.1s;
+  animation: block-anim 0.1s linear;
+}
+
+.divider {
+  background-color: #ffffff10;
+}
+.divider.vertical {
+  width: 2px;
+  margin: 0 4px;
+  /* height: 80%; */
+}
+.divider.horizontal {
+  height: 2px;
+  margin: 4px 0;
 }
